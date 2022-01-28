@@ -81,6 +81,20 @@ func Test_makeChange(t *testing.T) {
 			},
 			want: " 3Q 2D 4P",
 		},
+		{
+			name: "-2 cents",
+			args: args{
+				cents: -2,
+			},
+			want: "",
+		},
+		{
+			name: "1000 cents",
+			args: args{
+				cents: 1000,
+			},
+			want: " 40Q",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
